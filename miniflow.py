@@ -1,5 +1,5 @@
 class Node(object):
-    def __init__(self):
+    def __init__(self, inbound_nodes=[]):
         # Node(s) from which this Node receives values
         self.inbound_nodes = inbound_nodes
         # Node(s) to which this Node passes values
@@ -46,5 +46,11 @@ class Add(Node):
         Node.__init__(self, [x, y])
 
     def forward(self):
-        # TODO: calculate the output value of Add Node.
-        raise NotImplemented
+        """
+        Set the value of this node (`self.value`) to the sum of it's inbound_nodes.
+
+        Your code here!
+        """
+        self.value = 0
+        for n in self.inbound_nodes:
+            self.value += n.value
