@@ -7,3 +7,6 @@ class Node(object):
     # For each inbound Node here, add this Node as an outbound to that Node.
     for n in self.inbound_nodes:
       n.outbound_nodes.append(self)
+
+    # A calculated value
+    self.value = None
