@@ -165,7 +165,6 @@ class Sigmoid(Node):
         """
         # Initialize the gradients to 0.
         self.gradients = {n: np.zeros_like(n.value) for n in self.inbound_nodes}
-        print(len(self.gradients))
 
         # Cycle through the outputs. The gradient will change depending
         # on each output, so the gradients are summed over all outputs.
