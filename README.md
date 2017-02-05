@@ -16,5 +16,5 @@ Differentiable graphs are graphs where the nodes are differentiable functions. T
 With graphs and backpropagation, you will be able to create your own nodes and properly compute the derivatives. Even more importantly, you will be able to think and reason in terms of these graphs.
 
 ## License
-MiniFlow is free software, and may be redistributed under the terms specified in the
+MiniFlow is a free software and may be redistributed under the terms specified in the
 [LICENSE](/LICENSE) file.
