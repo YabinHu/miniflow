@@ -10,3 +10,12 @@ class Node(object):
 
     # A calculated value
     self.value = None
+
+  def forward(self):
+    """
+    Forward propagation.
+
+    Compute the output value based on `inbound_nodes` and store the result in
+    self.value.
+    """
+    raise NotImplemented
