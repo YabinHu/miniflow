@@ -40,10 +40,10 @@ class Input(Node):
             self.value = value
 
 class Add(Node):
-    def __init__(self, x, y):
+    def __init__(self, *inputs):
         # Add class takes 2 inbound nodes, x and y, and adds the values of those
         # nodes.
-        Node.__init__(self, [x, y])
+        Node.__init__(self, inputs)
 
     def forward(self):
         """
