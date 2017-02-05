@@ -22,15 +22,15 @@ class Node(object):
 
 class Input(Node):
     def __init__(self):
-        # An Input node has no inbound nodes,
-        # so no need to pass anything to the Node instantiator.
+        # An Input node has no inbound nodes, so no need to pass anything to the
+        # Node instantiator.
         Node.__init__(self)
 
-    # NOTE: Input node is the only node where the value
-    # may be passed as an argument to forward().
+    # NOTE: Input node is the only node where the value may be passed as an
+    # argument to forward().
     #
-    # All other node implementations should get the value
-    # of the previous node from self.inbound_nodes
+    # All other node implementations should get the value of the previous node
+    # from self.inbound_nodes
     #
     # Example:
     # val0 = self.inbound_nodes[0].value
@@ -38,3 +38,13 @@ class Input(Node):
         # Overwrite the value if one is passed in.
         if value is not None:
             self.value = value
+
+class Add(Node):
+    def __init__(self, x, y):
+        # Add class takes 2 inbound nodes, x and y, and adds the values of those
+        # nodes.
+        Node.__init__(self, [x, y])
+
+    def forward(self):
+        # TODO: calculate the output value of Add Node.
+        raise NotImplemented
