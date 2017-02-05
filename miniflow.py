@@ -104,6 +104,4 @@ class Sigmoid(Node):
 
         Your code here!
         """
-        # This is a dummy value to prevent numpy errors
-        # if you test without changing this method.
         self.value = self._sigmoid(self.inbound_nodes[0].value)
