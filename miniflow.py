@@ -1,3 +1,5 @@
+import numpy as np
+
 class Node(object):
     def __init__(self, inbound_nodes=[]):
         # Node(s) from which this Node receives values
@@ -54,3 +56,21 @@ class Add(Node):
         self.value = 0
         for n in self.inbound_nodes:
             self.value += n.value
+
+class Linear(Node):
+    def __init__(self, inputs, weights, bias):
+        Node.__init__(self, [inputs, weights, bias])
+
+        # NOTE: The weights and bias properties here are not
+        # numbers, but rather references to other nodes.
+        # The weight and bias values are stored within the
+        # respective nodes.
+
+    def forward(self):
+        """
+        Set self.value to the value of the linear function output.
+
+        Your code goes here!
+        """
+        self.value = np.dot(self.inbound_nodes[0].value, self.inbound_nodes[1].value)
+        self.value += self.inbound_nodes[2].value
